@@ -18,6 +18,29 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.mysql = {
+    client: {
+      host: 'localhost',
+      port: '3306',
+      user: 'root',
+      password: 'root123456',
+      database: 'blog_demo'
+    },
+    app: true,
+    agent: false,
+  };
+
+  config.security = {
+    csrf: { enable: false },
+    domainWhiteList: ['*']
+  };
+
+  config.cors = {
+    // origin: 'http://localhost:3000',
+    credentials: true,
+    allowMethods: 'GET, HEAD, PUT, POST, DELETE, PATCH, OPTIONS'
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
